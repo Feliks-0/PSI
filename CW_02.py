@@ -68,7 +68,25 @@ def Odwrot(text):
     print(text[::-1])
 Odwrot("koteł")
 #ZAD 8
+class FileManager:
+    def __init__(self, file):
+        self.file=file
 
+    def updatef(self, text):
+        plik=open(self.file, 'a' ,encoding='utf-8')
+        plik.write(text)
+
+    def readf(self):
+        zapis = open(self.file, 'r', encoding='utf-8')
+        while True:
+            dane = zapis.read(1024)
+            print(dane, end='')
+            if not dane:
+                zapis.close()
+                break
 #ZAD 9
-
+from CW_02 import *
+plik = FileManager('plik.txt')
+FileManager.updatef(plik,'Witam dodaje tekst')
+plik.readf()
 #ZAD 10
