@@ -1,8 +1,9 @@
 from django.urls import path
-from .api import Dead_Api,ListUsers
+from .api import *
 from . import views
 
 urlpatterns = [
-    path('api', Dead_Api.as_view()),
-    path('api2', ListUsers.as_view() )
+    path('api', Generic_Api.as_view()),
+    path('zmarli_api', Zmarli_Api.as_view()),
+    path('user_api', ListUsers.as_view() )
 ]
