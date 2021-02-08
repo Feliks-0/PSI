@@ -1,8 +1,16 @@
 from django.shortcuts import render
+from rest_framework import status, generics
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
-# Create your views here.
-from django.http import HttpResponse
+
+from . import models
+from . import serializers
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+@api_view(["GET"])
+def home(request):
+    return Response({"message":"Welcome Home!"},
+                    status=status.HTTP_200_OK)
+
+

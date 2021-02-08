@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import Dead_people
 
-# Register your models here.
+admin.site.register(Dead_people)
